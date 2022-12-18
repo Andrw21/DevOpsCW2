@@ -1,8 +1,4 @@
-FROM nodejs:latest
-
-COPY index.html /usr/share/node/html
-COPY linux.png /usr/share/node/html
-
-EXPOSE 80 443
-
-CMD ["node", "-g", "daemon off;"]
+FROM node:6.14.2
+EXPOSE 8080
+COPY server.js .
+CMD node server.js
